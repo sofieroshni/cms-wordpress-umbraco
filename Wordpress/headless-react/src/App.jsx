@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 
 const API_BASE = import.meta.env.VITE_WP_API_BASE;
 
@@ -27,7 +28,6 @@ export default function App() {
         }
 
         const cleanBase = API_BASE.replace(/\/$/, "");
-        // const url = `${cleanBase}/?rest_route=/wp/v2/cake&_embed&per_page=10`;
         const url = `${cleanBase}/?rest_route=/wp/v2/posts`;
 
 
@@ -57,13 +57,13 @@ export default function App() {
   }, []);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p style={{ color: "crimson" }}>Error: {error}</p>;
+  if (error) return <p style={{ color: "black", fontSize: 10 }}>Error: {error}</p>;
 
   return (
-    <main style={{ maxWidth: 900, margin: "0 auto", padding: 16 }}>
-      <h1>Post</h1>
+    <main >
+      <h1>Post med headless-react</h1>
 
-      <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 16 }}>
+      <ul >
         {posts.map((post) => {
           const featuredMedia = post._embedded?.["wp:featuredmedia"]?.[0];
           const featuredImageUrl =
@@ -76,19 +76,12 @@ export default function App() {
           return (
             <li
               key={post.id}
-              style={{ border: "1px solid #ddd", padding: 16, borderRadius: 12 }}
             >
               {imageUrl && (
                 <img
                   src={imageUrl}
                   alt={featuredMedia?.alt_text || post.title.rendered}
-                 /*style={{
-                    width: "100%",
-                    maxHeight: 260,
-                    objectFit: "cover",
-                    borderRadius: 8,
-                    marginBottom: 12,
-                  }}*/
+              
                 />
               )}
 
@@ -107,5 +100,6 @@ export default function App() {
         })}
       </ul>
     </main>
+   
   );
 }

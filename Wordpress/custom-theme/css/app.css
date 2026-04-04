@@ -1,10 +1,42 @@
 html, body {
 margin: 0;
-background: #ccc;
-color: #c70d0d;
+background: red;
+color: #333;
 font-family: sans-serif;
 }
 body {
 padding: 20px;
-background-color: black;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body {
+  margin: 0;
+  background: #ccc;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  padding: 20px;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  color: yellow;
+  font-size: 150px;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  color: brown;
+  font-size: 50px;
 }

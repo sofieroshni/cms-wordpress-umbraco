@@ -28,7 +28,7 @@ export default function App() {
 
         const cleanBase = API_BASE.replace(/\/$/, "");
         // const url = `${cleanBase}/?rest_route=/wp/v2/cake&_embed&per_page=10`;
-        const url = `${cleanBase}/?rest_route=wp-json/wp/v2/posts`;
+        const url = `${cleanBase}/?rest_route=/wp/v2/posts`;
 
 
         const res = await fetch(url);

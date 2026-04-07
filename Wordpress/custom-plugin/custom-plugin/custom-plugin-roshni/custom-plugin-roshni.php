@@ -9,13 +9,13 @@
 function sig_hej(){
     echo "Hej, jeg er det forste plugin";
 }
-add_action('init, sig_hej');
+add_action('wp_footer', 'sig_hej');
 
-//denne hook gør at der kommer en note i bunden af indlægget hvis det er et indlæg (is_single),altså der ikke er flere end 1
+//denne hook gør at der kommer en note i bunden af indlægget hvis det er et indlæg (is_single),altså at jeg er inde på et enkelt view<
 function custom_plugin_footer_note($content) {
     if (is_single()) {
-        $content .= '<p style="background:#f0f0f0; padding:10px;">Dette er mit første plugin, den kan deværre kun vises hvis jeg 
-        har 1 post tilbage så jeg har lige spildt min tid :) -(desto mindrer jeg self, sletter alle på nær 1 post) </p>';
+        $content .= '<p style="background:#f0f0f0; padding:10px;">Dette er mit første plugin, Jeg er på et enkelt post lige nu
+    , jeg slipper for at skrive rå HTML 100 gange  </p>';
     }
     return $content;
 }

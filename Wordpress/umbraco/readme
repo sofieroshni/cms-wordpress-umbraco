@@ -1,0 +1,28 @@
+
+OBS! NEDENSTÅENDE TEKSTI RAPPORT MED BILLEDER OG LETTERE AT LÆSE:D
+
+
+For at få indblik i Umbraco valgte jeg at lave en Umbraco-installation lokalt med DOcker og SQL.Kompleksiten var størrer end med WOrdpres (Downloader Zip, uploader FTP, og installerer) Med umbraco sørgede jeg for, at softwares som Docker desktop var installeret. Nye software jeg støtte ind på var MSSQL-udvidelsen til VSC (fra Microsoft), VSC og .Net SDK. For at bekræfte installationen skulle jeg som noget nyt kører dotnet –info i terminalen. Jeg fulgte resten tutorialen og lavede derved: Docker-setup,       
+ SQL server og config Filer sammen med tutorialens    
+kommandoer. 
+
+ Det tog mig end del længere tid end med wordpress som kun tog 5 minutter fordi den anvendte PHP og mySQL. Det er således helt forskellige sprog,
+
+Oprettelse af projekt-mappe + umbraco-installation. Jeg kørte disse kommandoer:
+dotnet new -i Umbraco.Templates
+mkdir umbraco-projekt
+dotnet new umbraco --name umbraco-projekt
+cd umbraco-projekt
+
+
+
+Compiler
+database.Jeg kører i terminalen for at starte en lokal server: dotnet run 
+
+
+Oprettelse af db
+
+
+Installation
+
+rCtrl + p >MS SQL: New Query > + jeg skriver SHIFT + CTRL + E for at kører forespørgelse. Undervejs holder jeg øje med terminal og query-history. Jeg konfigurerer jeg forbindelsesstrengene. Koden er taget fra tutorialen. Der var problemer, da koden ikke måtte havde linjeskift, så derfor tog det mig også længer tid. På billedet nedenfor kan man se versionen der ikke virkede, overstreget del er bare loginoplsyninger
